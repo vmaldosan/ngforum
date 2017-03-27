@@ -5,7 +5,7 @@ import { Post } from './post';
 	selector: 'my-app',
 	template: `
 		<h1>{{title}}</h1>
-		<h2>Selected post: {{selectedPost.subject}}</h2>
+		<h2>Selected post: {{ selectedPost }}</h2>
 		<p>Forum</p>
 		<ul>
 			<li (click)="onPostClick(post)" *ngFor="let post of posts">
@@ -32,6 +32,6 @@ export class AppComponent {
 	selectedPost: Post;
 
 	onPostClick(post: Post) {
-		alert(post.id);
+		this.selectedPost = post;
 	}
 }
