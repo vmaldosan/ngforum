@@ -5,10 +5,10 @@ import { Post } from './post';
 	selector: 'my-app',
 	template: `
 		<h1>{{title}}</h1>
-		<h2>Selected post: {{postId}}</h2>
+		<h2>Selected post: {{selectedPost}}</h2>
 		<p>Forum</p>
 		<ul>
-			<li *ngFor="let post of posts">
+			<li (click)="onPostClick(this)" *ngFor="let post of posts">
 				{{ post.subject }}
 				{{ post.content }}
 			</li>
@@ -29,4 +29,9 @@ export class AppComponent {
 			Ut est reprehenderit consequat ut commodo Duis non dolor Excepteur nostrud.`)
 	];
 	myPost = this.posts[0];
+	selectedPost: Post;
+
+	onPostClick(post: Post) {
+		alert(post.id);
+	}
 }
