@@ -1,6 +1,6 @@
 {
 	"name": "ngforum",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Ngforum package.json from the documentation, supplemented with testing support",
 	"scripts": {
 		"build": "tsc -p src/",
@@ -18,7 +18,8 @@
 		"test": "concurrently \"npm run build:watch\" \"karma start karma.conf.js\"",
 		"pretest:once": "npm run build",
 		"test:once": "karma start karma.conf.js --single-run",
-		"lint": "tslint ./src/**/*.ts -t verbose"
+		"lint": "tslint ./src/**/*.ts -t verbose",
+		"all": "concurrently \"npm run lint\" \"npm run test\" \"npm run e2e\""
 	},
 	"keywords": [],
 	"author": "vmaldosan",
@@ -34,9 +35,9 @@
 		"@angular/router": "~4.0.0",
 
 		"angular-in-memory-web-api": "~0.3.0",
-		"systemjs": "0.19.40",
+		"systemjs": "0.20.10",
 		"core-js": "^2.4.1",
-		"rxjs": "5.0.1",
+		"rxjs": "5.2.0",
 		"zone.js": "^0.8.4"
 	},
 	"devDependencies": {

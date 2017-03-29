@@ -1,8 +1,8 @@
 import { browser, element, by } from 'protractor';
 
-describe('QuickStart E2E Tests', function () {
+describe('NgForum E2E Tests', function () {
 
-	let expectedMsg = 'NgForum';
+	let expectedMsg = 'User Form';
 
 	beforeEach(function () {
 		browser.get('');

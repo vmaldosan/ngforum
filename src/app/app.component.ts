@@ -3,7 +3,9 @@ import { Post } from './post';
 
 @Component({
 	selector: 'my-app',
-	template: `
+	template: '<user-form></user-form>'
+
+	/*`
 		<h1>{{title}}</h1>
 		<div *ngIf="selectedPost">
 			<h2>Selected post: {{ selectedPost.id }}</h2>
@@ -18,7 +20,7 @@ import { Post } from './post';
 			<hr/>
 		</div>
 		<p>{{posts.length}} posts.</p>
-	`
+	`*/
 })
 
 export class AppComponent {
