@@ -10,7 +10,7 @@ import { User } from './user';
 export class UserFormComponent {
 	countries = ['Germany', 'Ireland', 'Spain', 'UK', 'USA'];
 
-	model = new User(1, 'Vic', 'vmaldosan', 'vmaldosan@gmail.com', new Date('24/06/1984'), 'Victor', 'Maldonado', 'Ireland');
+	model = new User(1, 'vmaldosan', 'vmaldosan@gmail.com', new Date('24/06/1984'), 'Victor', 'Maldonado', 'Ireland');
 
 	submitted = false;
 
@@ -19,6 +19,6 @@ export class UserFormComponent {
 	get diagnostic() { return JSON.stringify(this.model); }
 
 	newUser() {
-		this.model = new User(1, '', '', '', null);
+		this.model = new User(1, '', '', null);
 	}
 }
