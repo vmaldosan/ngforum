@@ -27,7 +27,7 @@ describe('AppComponent', function () {
 	it('should have expected <h1> text', () => {
 		fixture.detectChanges();
 		const h1 = de.nativeElement;
-		expect(h1.innerText).toMatch(/NgForum/i,
-			'<h1> should say something about "NgForum"');
+		expect(h1.innerText).toMatch(/User Form/i,
+			'<h1> should say something about "User Form"');
 	});
 });
