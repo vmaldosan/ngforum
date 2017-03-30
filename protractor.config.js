@@ -39,6 +39,8 @@ exports.config = {
 	// doesn't seem to work.
 	// resultJsonOutputFile: "foo.json",
 
+	getPageTimeout: 20000,
+
 	onPrepare: function() {
 		//// SpecReporter
 		//var SpecReporter = require('jasmine-spec-reporter');
