@@ -1,7 +1,6 @@
 # NgForum
 [![Build Status](https://travis-ci.org/vmaldosan/ngforum.svg?branch=master)](https://travis-ci.org/vmaldosan/ngforum)
-[![Build status](https://ci.appveyor.com/api/github/webhook?id=c0lhso7p2reetprh
-?svg=true)](https://ci.appveyor.com/project/vmaldosan/ngforum)
+[![Build status](https://ci.appveyor.com/api/github/webhook?id=c0lhso7p2reetprh?svg=true)](https://ci.appveyor.com/project/vmaldosan/ngforum)
 [![Dependency Status](https://david-dm.org/vmaldosan/ngforum.svg)](https://david-dm.org/vmaldosan/ngforum)
 
 Simple forum made in Angular, ExpressJS and MongoDB.
