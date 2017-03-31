@@ -1,7 +1,7 @@
 export class User {
-	numPosts: number;
-	enabled: boolean;
-	bannedUntil: Date;
+	numPosts?: number;
+	enabled?: boolean;
+	bannedUntil?: Date;
 
 	constructor(
 		public id: number,
