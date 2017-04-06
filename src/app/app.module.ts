@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import { UserFormComponent} from './user/user-form.component';
-import { Logger} from './logger.service';
+import { PostListComponent } from './post/post-list.component';
+import { UserFormComponent } from './user/user-form.component';
+import { Logger } from './logger.service';
+import { PostService } from './post/post.service';
 
 @NgModule({
 	imports: [
@@ -13,9 +15,10 @@ import { Logger} from './logger.service';
 	],
 	declarations: [
 		AppComponent,
+		PostListComponent,
 		UserFormComponent
 	],
-	providers: [ Logger ],
+	providers: [ Logger, PostService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule { }
