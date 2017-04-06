@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Post } from './post';
 import { PostService } from './post.service';
@@ -10,24 +11,24 @@ import { User } from '../user/user';
 		<div *ngIf="selectedPost">
 			<h2>Selected post: {{ selectedPost.id }}</h2>
 		</div>
-		<div><button class="btn btn-success">New post</button></div>
+		<div><button (click)="gotoNewPost()" class="btn btn-success">New post</button></div>
 		<div (click)="onSelect(post)" *ngFor="let post of posts" class="form-group">
-			<h3>{{post.subject}}</h3>
-			<p><i>{{post.author.username}}</i></p>
-			<p>{{post.content}}</p>
+			<h4>{{ post.subject }}</h4>
+			<p><i>{{ post.author.username }} ({{ post.created | date:'medium' }})</i></p>
+			<p>{{ post.content }}</p>
 		</div>
 		<hr>
-		<p>{{posts.length}} posts.</p>
+		<p>{{posts.length }} posts.</p>
 	`
 })
 
 export class PostListComponent {
 	posts: Post[];
 	selectedPost: Post;
-	lastId = 3;
-	testUser = new User(0, 'admin', 'admin@ngforum.com', new Date('01/01/1980'));
+	
+	constructor(private router: Router, 
+		private postService: PostService) {
 
-	constructor(postService: PostService) {
 		this.posts = postService.getPosts();
 	}
 
@@ -35,7 +36,7 @@ export class PostListComponent {
 		this.selectedPost = post;
 	}
 
-	addPost(subject: string, content: string) {
-		this.lastId = this.posts.push(new Post(this.lastId + 1, subject, content, this.testUser, new Date()));
+	gotoNewPost() {
+		this.router.navigate(['/post']);
 	}
 }

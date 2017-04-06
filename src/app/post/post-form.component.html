@@ -1,3 +1,27 @@
-<div><input #subject size="48"></div>
-<div><textarea #content rows="4" cols="50"></textarea></div>
-<div><button (click)="addPost(subject.value, content.value)">Add</button></div>
+<div [hidden]="submitted">
+	<div><h1>New post</h1></div>
+	<form (ngSubmit)="onSubmit(postForm)" #postForm="ngForm">
+		<label for="subject">Subject</label>
+		<div><input id="subject" required size="48"
+			[(ngModel)]="model.subject" name="subject"
+			#subject="ngModel"></div>
+		<div [hidden]="subject.valid || subject.pristine"
+				 class="alert alert-danger">
+			subject is required
+		</div>
+
+		<label for="content">Write your post here:</label>
+		<div><textarea id="content" required rows="4" cols="50" [(ngModel)]="model.content" name="content"
+			#content="ngModel"></textarea></div>
+		<div [hidden]="content.valid || content.pristine"
+				 class="alert alert-danger">
+			content is required
+		</div>
+
+		<div>
+			<button class="btn btn-default" (click)="goback()">Back</button>
+			<button type="button" class="btn btn-default" (click)="newPost(); postForm.reset()">Reset</button>
+			<button type="submit" class="btn btn-success" [disabled]="!postForm.form.valid">Submit</button>
+		</div>
+	</form>
+</div>

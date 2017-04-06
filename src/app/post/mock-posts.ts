@@ -1,8 +1,8 @@
 import { Post } from './post';
 import { User } from '../user/user';
 
-let user1 = new User(11, 'user1', 'user1@email.com', new Date('01/01/1981');
-let user2 = new User(12, 'user2', 'user2@email.com', new Date('01/01/1982');
+let user1 = new User(11, 'user1', 'user1@email.com', new Date('01/01/1981'));
+let user2 = new User(12, 'user2', 'user2@email.com', new Date('01/01/1982'));
 
 export var POSTS: Post[] = [
 	{

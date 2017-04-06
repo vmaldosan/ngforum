@@ -1,6 +1,6 @@
 {
 	"name": "ngforum",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Ngforum package.json from the documentation, supplemented with testing support",
 	"scripts": {
 		"build": "tsc -p src/",
