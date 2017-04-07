@@ -13,7 +13,6 @@ import { User } from '../user/user';
 export class PostFormComponent {
 	author = new User(0, 'author', '', new Date());
 	model = new Post(1, 'test', 'asdfasdfasdf', this.author, new Date());
-	lastId = 3;
 
 	submitted = false;
 
@@ -22,9 +21,9 @@ export class PostFormComponent {
 		private location: Location
 	) {}
 
-	onSubmit(data: Object) {
-		let post = (Post) data;
-		this.lastId = this.postService.addPost(new Post(this.lastId + 1, post.subject, post.content, this.author, new Date()));
+	onSubmit() {
+		let numPosts = this.postService.getPosts().length;
+		let newNum = this.postService.addPost(new Post(10000 + numPosts + 1, this.model.subject, this.model.content, this.author, new Date()));
 		this.location.back();
 		this.submitted = true;
 	}

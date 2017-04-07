@@ -6,7 +6,7 @@ let user2 = new User(12, 'user2', 'user2@email.com', new Date('01/01/1982'));
 
 export var POSTS: Post[] = [
 	{
-		id: 11,
+		id: 10001,
 		subject: 'subject1',
 		content: `Lorem ipsum Magna sit aliquip cillum ad Ut officia eu 
 			Ut est reprehenderit consequat ut commodo Duis non dolor Excepteur nostrud.`,
@@ -14,7 +14,7 @@ export var POSTS: Post[] = [
 		created: new Date()
 	},
 	{
-		id: 12,
+		id: 10002,
 		subject: 'subject2',
 		content: `Lorem ipsum Magna sit aliquip cillum ad Ut officia eu 
 			Ut est reprehenderit consequat ut commodo Duis non dolor Excepteur nostrud.`,
@@ -22,7 +22,7 @@ export var POSTS: Post[] = [
 		created: new Date()
 	},
 	{
-		id: 13,
+		id: 10003,
 		subject: 'subject3',
 		content: `Lorem ipsum Magna sit aliquip cillum ad Ut officia eu 
 			Ut est reprehenderit consequat ut commodo Duis non dolor Excepteur nostrud.`,
