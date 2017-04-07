@@ -5,11 +5,8 @@ import { UserService} from './user.service';
 
 @Component({
 	selector: 'user-list',
-	template: `
-		<div *ngFor="let user of users">
-			{{user.id}} - {{user.username}}
-		</div>
-	`
+	templateUrl: './user-list.component.html',
+	styleUrls: [ './user-list.component.css' ]
 })
 
 export class UserListComponent {

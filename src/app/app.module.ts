@@ -6,6 +6,7 @@ import { AppComponent }  from './app.component';
 import { PostListComponent } from './post/post-list.component';
 import { PostFormComponent } from './post/post-form.component';
 import { PostService } from './post/post.service';
+import { UserListComponent } from './user/user-list.component';
 import { UserFormComponent } from './user/user-form.component';
 import { UserService } from './user/user.service';
 import { Logger } from './logger.service';
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
 		AppComponent,
 		PostListComponent,
 		PostFormComponent,
+		UserListComponent,
 		UserFormComponent
 	],
 	providers: [ Logger, PostService, UserService ],
