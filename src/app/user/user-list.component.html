@@ -1,10 +1,15 @@
+<div><button (click)="gotoNewUser()" class="btn btn-success">New user</button></div>
 <ul class="users">
 	<li *ngFor="let user of users"
 	[class.selected]="user === selectedUser"
 	(click)="onSelect(user)">
-	<span class="badge">{{user.id}}</span> {{user.username}}
+		<span class="left">{{ user.id }}</span><span class="text">{{ user.username }}</span><span class="btn-del" (click)="onDelete(user)">X</span>
 	</li>
 </ul>
 <div *ngIf="selectedUser">
-	<button (click)="gotoDetail()">View Details</button>
+	<div><label>User name:</label> {{ selectedUser.username }}</div>
+	<div><label>Email:</label> {{ selectedUser.email }}</div>
+	<div><label>Date of birth:</label> {{ selectedUser.dob | date:'d/MM/yyyy' }}</div>
+	<div><label>Country of residence:</label> {{ selectedUser.country }}</div>
+	<div><button type="button" class="btn btn-default" (click)="onEdit(selectedUser)">Edit</button></div>
 </div>

@@ -8,8 +8,8 @@ export class User {
 		public username: string,
 		public email: string,
 		public dob: Date,
+		public country?: string,
 		public firstname?: string,
-		public lastname?: string,
-		public country?: string
+		public lastname?: string
 	) {	}
 }

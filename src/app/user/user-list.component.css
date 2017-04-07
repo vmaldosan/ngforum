@@ -1,66 +1,58 @@
 .selected {
-	background-color: #039b09 !important;
+	background-color: #777 !important;
 	color: white;
 }
 .users {
-	margin: 2em 0 2em 0;
-	list-style-type: none;
-	padding: 0;
 	width: 15em;
+	list-style-type: none;
+	padding-left: 0px;
 }
 .users li {
 	cursor: pointer;
 	position: relative;
 	left: 0;
 	background-color: #EEE;
-	margin: .5em;
-	padding: .3em 0;
-	height: 1.6em;
+	line-height: 1em;
+	margin: .7em .5em .5em .5em;
+	height: 1.8em;
 	border-radius: 4px;
+	top: -3px;
 }
 .users li:hover {
-	color: #039b09;
+	color: #449d44;
 	background-color: #DDD;
 	left: .1em;
 }
 .users li.selected:hover {
-	background-color: #BBD8DC !important;
+	background-color: #333 !important;
 	color: white;
 }
 .users .text {
 	position: relative;
-	top: -3px;
+	padding: 0.7em;
 }
-.users .badge {
-	display: inline-block;
+.users .left {
 	font-size: small;
+	font-weight: bold;
 	color: white;
-	padding: 0.8em 0.7em 0.7em 0.7em;
-	background-color: #039b09;
-	line-height: 1em;
+	padding: 0.45em 0.7em 0.45em 0.7em;
+	background-color: #5cb85c;
+	line-height: 2em;
 	position: relative;
 	left: -1px;
-	top: -4px;
 	height: 1.8em;
-	margin-right: .8em;
 	border-radius: 4px 0 0 4px;
 }
-button {
-	font-family: Arial;
-	background-color: #eee;
-	border: none;
-	padding: 5px 10px;
+.users .left:hover{
+	background-color: #449d44;
+}
+.users .btn-del {
+	position: absolute;
+	padding: 0.7em;
+	background-color: inherit;
+	right: -45px;
+	height: 1.8em;
 	border-radius: 4px;
-	cursor: pointer;
-	cursor: hand;
+	line-height: .5em;
+	margin: 0 .5em;
 }
-button:hover {
-	background-color: #cfd8dc;
-}
-
-
-/*
-Copyright 2017 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -11,7 +11,8 @@ export var POSTS: Post[] = [
 		content: `Lorem ipsum Magna sit aliquip cillum ad Ut officia eu 
 			Ut est reprehenderit consequat ut commodo Duis non dolor Excepteur nostrud.`,
 		author: user1,
-		created: new Date()
+		created: new Date(),
+		numPrints: 111
 	},
 	{
 		id: 10002,
@@ -19,7 +20,8 @@ export var POSTS: Post[] = [
 		content: `Lorem ipsum Magna sit aliquip cillum ad Ut officia eu 
 			Ut est reprehenderit consequat ut commodo Duis non dolor Excepteur nostrud.`,
 		author: user2,
-		created: new Date()
+		created: new Date(),
+		numPrints: 222
 	},
 	{
 		id: 10003,
@@ -27,6 +29,7 @@ export var POSTS: Post[] = [
 		content: `Lorem ipsum Magna sit aliquip cillum ad Ut officia eu 
 			Ut est reprehenderit consequat ut commodo Duis non dolor Excepteur nostrud.`,
 		author: user1,
-		created: new Date()
+		created: new Date(),
+		numPrints: 333
 	},
 ];

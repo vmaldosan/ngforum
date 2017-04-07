@@ -22,13 +22,11 @@ export class PostFormComponent {
 	) {}
 
 	onSubmit() {
-		let numPosts = this.postService.getPosts().length;
-		let newNum = this.postService.addPost(new Post(10000 + numPosts + 1, this.model.subject, this.model.content, this.author, new Date()));
+		let numPosts = this.postService.getNumPosts();
+		this.postService.addPost(new Post(10000 + numPosts + 1, this.model.subject, this.model.content, this.author, new Date(), 0));
 		this.location.back();
 		this.submitted = true;
 	}
-
-	get diagnostic() { return JSON.stringify(this.model); }
 
 	newPost() {
 		this.model = new Post(1, '', '', null, null);
@@ -38,4 +36,5 @@ export class PostFormComponent {
 		this.location.back();
 	}
 
+	// get diagnostic() { return JSON.stringify(this.model); }
 }

@@ -6,5 +6,6 @@ export class Post {
 		public subject: string,
 		public content: string,
 		public author: User,
-		public created: Date) { }
+		public created: Date,
+		public numPrints?: number) { }
 }

@@ -3,6 +3,11 @@ Upgraders: for a fresh start, consider running these commands
 * `git clean -xdf` 
 * `npm install`
 
+<a name="0.0.3"></a>
+# 0.0.3 (2017-04-14)
+* Dashboard.
+* Adds functionality to edit and delete users.
+
 <a name="0.0.2"></a>
 # 0.0.2 (2017-03-28)
 * Basic functionality.
