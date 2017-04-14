@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Post } from './post';
@@ -21,14 +21,15 @@ import { PostService } from './post.service';
 	`
 })
 
-export class PostListComponent {
+export class PostListComponent implements OnInit {
 	posts: Post[];
 	selectedPost: Post;
 
 	constructor(private router: Router,
-		private postService: PostService) {
+		private postService: PostService) { }
 
-		postService.getPosts().then(posts => this.posts = posts);
+	ngOnInit(): void {
+		this.postService.getPosts().then(posts => this.posts = posts);
 	}
 
 	onSelect(post: Post) {
