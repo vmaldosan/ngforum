@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { User } from './user';
@@ -10,14 +10,15 @@ import { UserService} from './user.service';
 	styleUrls: [ './user-list.component.css' ]
 })
 
-export class UserListComponent {
+export class UserListComponent implements OnInit {
 	users: User[];
 	selectedUser: User;
 
 	constructor(private router: Router,
-		userService: UserService) {
+		private userService: UserService) {	}
 
-		userService.getUsers().then(users => this.users = users);
+	ngOnInit(): void {
+		this.userService.getUsers().then(users => this.users = users);
 	}
 
 	onSelect(user: User): void {
@@ -33,6 +34,7 @@ export class UserListComponent {
 		if (yes) {
 			let idx = this.users.indexOf(user);
 			this.users.splice(idx, 1);
+			this.selectedUser = null;
 		}
 	}
 

@@ -11,5 +11,5 @@
 	<div><label>Email:</label> {{ selectedUser.email }}</div>
 	<div><label>Date of birth:</label> {{ selectedUser.dob | date:'d/MM/yyyy' }}</div>
 	<div><label>Country of residence:</label> {{ selectedUser.country }}</div>
-	<div><button type="button" class="btn btn-default" (click)="onEdit(selectedUser)">Edit</button></div>
+	<div><button id="edit" type="button" class="btn btn-default" (click)="onEdit(selectedUser)">Edit</button></div>
 </div>

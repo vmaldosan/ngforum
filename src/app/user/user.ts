@@ -11,5 +11,7 @@ export class User {
 		public country?: string,
 		public firstname?: string,
 		public lastname?: string
-	) {	}
+	) {
+		this.numPosts = 0;
+	}
 }

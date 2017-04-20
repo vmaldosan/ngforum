@@ -1,19 +1,12 @@
 import { TestBed, ComponentFixture, async, inject } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { PostListComponent } from './post-list.component';
 import { PostService } from './post.service';
 import { Post } from './post';
 import { User } from '../user/user';
 
-class RouterStub {
-	 navigateByUrl(url: string) { return url; }
-}
-
 describe('Component: Post List', () => {
-	let comp: PostListComponent;
 	let fixture: ComponentFixture<PostListComponent>;
 	let spy: any;
 	let routerStub: any;
@@ -40,25 +33,19 @@ describe('Component: Post List', () => {
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PostListComponent);
-		comp = fixture.componentInstance;
 
 		postService = fixture.debugElement.injector.get(PostService);
 
 		spy = spyOn(postService, 'getPosts').and.returnValue(Promise.resolve(testPosts));
 	});
 
-	it('should display \"New post\" button', () => {
-		let btnTxt = 'New post';
-		expect(fixture.nativeElement.querySelector('button').innerText).toContain(btnTxt);
-	});
-
-	it('should not show quote before OnInit', () => {
+	it('should not show posts before OnInit', () => {
 		expect(spy.calls.any()).toBe(false, 'getPosts not yet called');
 	});
 
 	it('should still not show posts after component initialized', () => {
 		fixture.detectChanges();
-		expect(spy.calls.any()).toBe(true, 'getQuote called');
+		expect(spy.calls.any()).toBe(true, 'getPosts called');
 	});
 
 	it('should show posts after getPosts promise (async)', async(() => {
@@ -69,11 +56,14 @@ describe('Component: Post List', () => {
 		});
 	}));
 
-	describe('gotoNewPost method', () => {
-		it('should tell ROUTER to navigate when New post button clicked', () => {
-			fixture.componentInstance.gotoNewPost();
-			expect(routerStub.navigate).toHaveBeenCalledWith(['/post']);
-		});
+	it('should display \"New post\" button', () => {
+		let btnTxt = 'New post';
+		expect(fixture.nativeElement.querySelector('button').innerText).toContain(btnTxt);
+	});
+
+	it('should tell ROUTER to navigate when \"New post\" button clicked', () => {
+		fixture.componentInstance.gotoNewPost();
+		expect(routerStub.navigate).toHaveBeenCalledWith(['/post']);
 	});
 
 });
