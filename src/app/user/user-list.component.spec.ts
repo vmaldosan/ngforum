@@ -1,7 +1,5 @@
-import { TestBed, ComponentFixture, async, inject } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { By } from '@angular/platform-browser';
 
 import { UserListComponent } from './user-list.component';
 import { UserService } from './user.service';
@@ -14,7 +12,7 @@ describe('Component: User List', () => {
 	let userService: UserService;
 	let testUsers: User[] = [{
 		id: 1,
-		username:'test',
+		username: 'test',
 		email: 'user@test.ie',
 		dob: new Date()
 	}];
@@ -91,9 +89,9 @@ describe('Component: User List', () => {
 		fixture.detectChanges();
 		fixture.whenStable().then(() => {
 			fixture.detectChanges();
-			let li = fixture.nativeElement.querySelectorAll('li');
-			//li[0].click();
-			//fixture.detectChanges();
+			// let li = fixture.nativeElement.querySelectorAll('li');
+			// li[0].click();
+			// fixture.detectChanges();
 			fixture.componentInstance.onEdit(testUsers[0]);
 			expect(routerStub.navigate).toHaveBeenCalledWith(['/user', testUsers[0].id]);
 		});
@@ -105,7 +103,6 @@ describe('Component: User List', () => {
 			fixture.detectChanges();
 			let li = fixture.nativeElement.querySelectorAll('li');
 			let btn = li[0].children[2];
-			
 			spyOn(window, 'confirm').and.returnValue(false);
 			btn.click();
 			fixture.detectChanges();

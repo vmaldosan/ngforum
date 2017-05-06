@@ -1,4 +1,4 @@
-import { TestBed, ComponentFixture, async, inject } from '@angular/core/testing';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { Router } from '@angular/router';
 
 import { PostListComponent } from './post-list.component';
@@ -13,7 +13,7 @@ describe('Component: Post List', () => {
 	let postService: PostService;
 	let testPosts: Post[] = [{
 		id: 1,
-		subject:'test subject',
+		subject: 'test subject',
 		content: 'test content',
 		author: new User(1, 'test', 'test@test.ie', new Date()),
 		created: new Date()
