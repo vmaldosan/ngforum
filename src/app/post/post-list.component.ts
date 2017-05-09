@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Post } from './post';
 import { PostService } from './post.service';
+import { LoginService} from '../login/login.service';
 
 @Component({
 	selector: 'post-list',
@@ -10,7 +11,7 @@ import { PostService } from './post.service';
 		<div *ngIf="selectedPost">
 			<h2>Selected post: {{ selectedPost.id }}</h2>
 		</div>
-		<div><button (click)="gotoNewPost()" class="btn btn-success">New post</button></div>
+		<div><button *ngIf="loginService.isLoggedIn()" (click)="gotoNewPost()" class="btn btn-success">New post</button></div>
 		<div (click)="onSelect(post)" *ngFor="let post of posts" class="form-group">
 			<h4>{{ post.subject }}</h4>
 			<p><i>{{ post.author.username }} ({{ post.created | date:'medium' }}) {{ post.numPrints }} times read.</i></p>
@@ -26,7 +27,8 @@ export class PostListComponent implements OnInit {
 	selectedPost: Post;
 
 	constructor(private router: Router,
-		private postService: PostService) { }
+		private postService: PostService,
+		private loginService: LoginService) {}
 
 	ngOnInit(): void {
 		this.postService.getPosts().then(posts => this.posts = posts);
