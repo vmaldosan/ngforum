@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+// import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class LoginService {
 	private loggedIn = false;
 
-	//constructor(private http: Http) {
 	constructor(private router: Router) {
 		this.loggedIn = !!localStorage.getItem('auth_token');
 	}

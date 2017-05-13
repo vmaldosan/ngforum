@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+// import { Http, Headers } from '@angular/http';
 
 import { Post } from './post';
 import { POSTS } from './mock-posts';
@@ -10,15 +10,15 @@ export class PostService {
 	// constructor(private http: Http) {}
 
 	getPosts(): Promise<Post[]> {
-		let headers = new Headers();
+		/* let headers = new Headers();
 		headers.append('Content-Type', 'application/json');
 		let authToken = localStorage.getItem('auth_token');
 		headers.append('Authorization', `Bearer ${authToken}`);
 
-		return Promise.resolve(POSTS);
-		/* return this.http
+		 return this.http
 			.get('/posts', { headers })
 			.map(res => res.json()); */
+		return Promise.resolve(POSTS);
 	}
 
 	addPost(post: Post): number {

@@ -1,7 +1,7 @@
 {
 	"name": "ngforum",
-	"version": "0.0.3",
-	"description": "Ngforum package.json from the documentation, supplemented with testing support",
+	"version": "0.0.4",
+	"description": "Simple forum written in Angular.",
 	"scripts": {
 		"build": "tsc -p src/",
 		"build:watch": "tsc -p src/ -w",
@@ -57,7 +57,7 @@
 		"protractor": "^5.1.1",
 		"rimraf": "^2.6.1",
 
-		"@types/node": "7.0.15",
+		"@types/node": "7.0.18",
 		"@types/jasmine": "2.5.47"
 	},
 	"repository": "https://github.com/vmaldosan/ngforum"

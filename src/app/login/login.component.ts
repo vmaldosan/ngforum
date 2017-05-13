@@ -9,7 +9,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
 	model = { 'email' : '', 'password' : ''};
-	
+
 	constructor(private loginService: LoginService, private router: Router) {}
 
 	onSubmit(email: string, password: string) {

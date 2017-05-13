@@ -3,6 +3,11 @@ Upgraders: for a fresh start, consider running these commands
 * `git clean -xdf` 
 * `npm install`
 
+<a name="0.0.4"></a>
+# 0.0.4 (2017-05-13)
+* Unit tests.
+* Authentication mockup with Rxjs observables.
+
 <a name="0.0.3"></a>
 # 0.0.3 (2017-04-14)
 * Dashboard.
