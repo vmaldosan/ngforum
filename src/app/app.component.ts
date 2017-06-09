@@ -11,6 +11,7 @@ import { LoginService} from './login/login.service';
 			<nav>
 				<a routerLink="/posts" routerLinkActive="active">Forum</a>
 				<a routerLink="/users" *ngIf="loginService.isLoggedIn()" routerLinkActive="active">Users</a>
+				<a routerLink="/cities" routerLinkActive="active">Cities</a>
 				<a routerLink="/login" *ngIf="!loginService.isLoggedIn()" routerLinkActive="active">Login</a>
 				<button (click)="loginService.logout()" class="btn btn-success" *ngIf="loginService.isLoggedIn()">Logout</button>
 			</nav>

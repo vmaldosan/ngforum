@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { City } from './city';
+import { CityService } from './city.service';
+
 @Component({
 	selector: 'city-list',
 	template: `
-		<div (click)="onSelect(post)" *ngFor="let post of posts" class="form-group">
-			<h4>{{ post.subject }}</h4>
-			<p><i>{{ post.author.username }} ({{ post.created | date:'medium' }}) {{ post.numPrints }} times read.</i></p>
-			<p>{{ post.content }}</p>
+		<div *ngFor="let city of cities" class="form-group">
+			<p>{{ city.id }}</p>
+			<p>{{ city.name }}</p>
 		</div>
-		<hr>
-		<p *ngIf="posts">{{ posts.length }} posts.</p>
 	`
 })
 
-export class CityListComponent {
-	cities: string[];
+export class CityListComponent implements OnInit {
+	cities: City[];
 
-	constructor(private router: Router) {}
+	constructor(private router: Router,
+		private cityService: CityService) {}
 	
+	ngOnInit(): void {
+		this.cityService.getCities().then(cities => this.cities = cities);
+	}
 }

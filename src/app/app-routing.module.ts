@@ -15,8 +15,8 @@ const routes: Routes = [
 	{ path: 'users', 		component: UserListComponent, canActivate: [LoggedInGuard] },
 	{ path: 'user', 		component: UserFormComponent, canActivate: [LoggedInGuard] },
 	{ path: 'user/:id', component: UserFormComponent, canActivate: [LoggedInGuard] },
-	{ path: 'login', 		component: LoginComponent }
-	{ path: 'cities', 		component: CityListComponent }
+	{ path: 'login', 		component: LoginComponent },
+	{ path: 'cities', 	component: CityListComponent }
 ];
 
 @NgModule({
